@@ -1,0 +1,26 @@
+{
+  "name": "eslint-plugin-no-excessive-whitespace",
+  "version": "0.0.1",
+  "description": "",
+  "author": "sorennx",
+  "license": "MIT",
+  "keywords": [],
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "eslint": "^8.0.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "2.23.2",
+    "@types/node": "^22.2.0",
+    "@typescript-eslint/utils": "^8.1.0",
+    "eslint": "^9.9.0",
+    "eslint-config-universe": "^13.0.0",
+    "eslint-plugin-eslint-plugin": "^6.2.0",
+    "eslint-plugin-format": "0.1.2",
+    "eslint-plugin-unused-imports": "^4.1.3",
+    "typescript": "^5.5.4"
+  }
+}
