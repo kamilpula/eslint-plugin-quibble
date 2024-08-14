@@ -1,5 +1,6 @@
 {
   "name": "eslint-plugin-no-excessive-whitespace",
+  "type": "module",
   "version": "0.0.1",
   "description": "",
   "author": "sorennx",

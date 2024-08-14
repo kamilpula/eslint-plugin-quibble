@@ -1,9 +1,7 @@
-export function correctFooBar() {
-  const foo = 'bar'
-  console.warn(foo)
-}
+// function correctFooBar() {
+//   const foo = "bar";
+// }
 
-export function incorrectFoo() {
-  const foo = 'bar' // Problem!
-  console.warn(foo)
-}
+// function incorrectFoo(){
+//   const foo = "baz"; // Problem!
+// }

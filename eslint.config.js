@@ -1,10 +1,10 @@
-const antfu = require('@antfu/eslint-config').default
+import antfu from '@antfu/eslint-config'
 
-const localPlugin = require('./lib/index.js')
+import localPlugin from './lib/index.js'
 
-module.exports = antfu({
+export default antfu({
   plugins: {
-    localPlugin,
+    localPlugin
   },
   vue: true,
   formatters: {
