@@ -1,2 +1,1 @@
-# eslint-plugin-no-excessive-whitespace
- 
+# eslint-plugin-quibble
