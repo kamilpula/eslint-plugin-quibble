@@ -1,10 +1,10 @@
 import antfu from '@antfu/eslint-config'
 
-import localPlugin from './lib/index.js'
+import quibble from './lib/index.js'
 
 export default antfu({
   plugins: {
-    localPlugin
+    quibble,
   },
   vue: true,
   formatters: {
@@ -12,10 +12,9 @@ export default antfu({
     html: true,
     markdown: 'prettier',
     jsonc: true,
-
   },
   rules: {
     'jsonc/sort-keys': 'error',
-    'localPlugin/foo': 'error',
+    'quibble/vue-no-excessive-whitespaces': 'error',
   },
 })
