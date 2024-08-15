@@ -29,10 +29,7 @@ const condition2 = true
     </div>
 
     <div
-      :class="{
-        'text-primary bg-secondary': condition,
-        'flex gap-2': condition2,
-      }"
+      :class="{ 'text-primary': condition, 'flex gap-2': condition2 }"
     />
 
     <div :class="[condition ? 'absolute left-0 top-0' : 'text-warning']" />

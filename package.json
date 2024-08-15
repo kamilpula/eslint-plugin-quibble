@@ -5,11 +5,17 @@
   "description": "",
   "author": "sorennx",
   "license": "MIT",
+  "homepage": "https://github.com/sorennx/eslint-plugin-quibble",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sorennx/eslint-plugin-quibble"
+  },
+  "bugs": "https://github.com/sorennx/eslint-plugin-quibble/issues",
   "keywords": [],
   "main": "dist/index.js",
   "packageManager": "pnpm@9.7.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha \"tests/lib/**/*.js\"",
     "release": "pnpm run test && changeset publish"
   },
   "peerDependencies": {
@@ -20,6 +26,8 @@
     "@changesets/cli": "^2.27.7",
     "@types/node": "^22.2.0",
     "@typescript-eslint/utils": "^8.1.0",
-    "eslint": "^9.0.0"
+    "eslint": "^9.0.0",
+    "mocha": "^10.2.0",
+    "vue-eslint-parser": "^9.4.2"
   }
 }
