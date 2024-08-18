@@ -2,6 +2,8 @@
 
 ## Rule details
 
+This rule ensures that the class attribute in Vue templates does not contain any excessive whitespace. It removes unnecessary whitespace characters, including leading and trailing spaces, as well as multiple spaces between class names.
+
 ### Examples of **incorrect** code for this rule:
 
 #### Static class definition
