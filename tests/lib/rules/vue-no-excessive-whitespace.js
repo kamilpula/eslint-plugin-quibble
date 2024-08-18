@@ -1,8 +1,6 @@
 'use strict'
-import { create, meta } from '../../../lib/rules/vue-no-excessive-whitespace.js'
+import rule from '../../../lib/rules/vue-no-excessive-whitespace.js'
 import { createErrors, createVueTestCase, ruleTester } from '../../utils/index.js'
-
-const rule = { meta, create }
 
 ruleTester.run('vue-no-excessive-whitespace', rule, {
   valid: [
