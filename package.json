@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.1.0",
   "packageManager": "pnpm@9.7.0",
-  "description": "ESLint plugin with stylistic code formatting rules that are often nitpicked by developers",
+  "description": "ESLint plugin with stylistic code formatting rules that are often nitpicked in code review by developers.",
   "author": "sorennx",
   "license": "MIT",
   "homepage": "https://github.com/sorennx/eslint-plugin-quibble",
