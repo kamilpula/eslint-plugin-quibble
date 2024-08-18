@@ -11,9 +11,11 @@ Learn more about each supported rules by reading their documentation:
 By using [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) extension for Visual Studio Code, you will get the following messages:
 ![errors](.github/output.png)
 
-## Latest changelog
+## Latest changes
 
-Latest changes will appear here.
+- 8a10e79: Add vue-no-excessive-whitespace rule
+
+Check out the full changelog [here](CHANGELOG.md).
 
 ## Installation
 
@@ -51,6 +53,8 @@ export default [
 ]
 ```
 
+Adding `vue-eslint-parser` is optional - some popular configs such as [`antfu/eslint-config`](https://github.com/antfu/eslint-config) have it installed and configured already.
+
 ## Future
 
 In the future, this plugin will be extended by the rules the community or myself find worth of adding.
@@ -69,13 +73,13 @@ After that I'll move my attention to making this rule more framework agnostic, i
 
 ### What are your motivations?
 
-To be perfectly honest, while doing code reviews at my workplace, I often spot excessive whitespace characters, and it irks me—a lot.
+To be perfectly honest, while doing code reviews at my workplace, I would often spot excessive whitespace characters, and it irks me - a lot.
 
 Should I nitpick the PR and point out those lines, saying:
 
 > Hey, could you remove this whitespace? I know it doesn't change much, but I'd be pleased to see it gone from the codebase.
 
-Well, probably not. It's **annoying to impose stylistic rules** on developers that cannot be auto-fixed by their IDE—something I've learned from Theo. That's why I've developed this plugin.
+Well, probably not. It's **annoying to impose stylistic rules** on developers that cannot be auto-fixed by their IDE - something I've learned from Theo. That's why I've developed this plugin.
 
 Side note: The other option, to avoid making my fellow developers angry with me, was delivering the nitpicks in the form of a meme, which I actually did (at least) once `#meme-driven-development`.
 
@@ -83,15 +87,29 @@ Side note: The other option, to avoid making my fellow developers angry with me,
 
 ### Why a separate plugin / why not contribute to already existing projects?
 
-There are a few reasons. The primary one is that I wanted to finally build a tool on my own. I've spent countless hours configuring ESLint to work the way I want, and my curiosity about how it works internally eventually won.
+There are a few reasons why. The primary one is that I wanted to finally build a tool on my own. I've spent countless hours configuring ESLint to work the way I want, and my curiosity about how it works internally eventually won.
 
-The second reason why, it takes time to get your PR reviewed, accepted and published. Where would the `no-excessive-whitespace` rule even fit? `eslint-plugin-vue`, `eslint-plugin-stylistic` or maybe `eslint-plugin-tailwindcss`? There's an issue opened on the last one there since Jul 21, 2023.
+The second reason why, it takes time to get your PR reviewed, accepted and published. Where would the `no-excessive-whitespace` rule even fit? `eslint-plugin-vue`, `eslint-plugin-stylistic` or maybe `eslint-plugin-tailwindcss`? There's an issue opened on the last one since Jul 21, 2023.
 
-Therefore, it was easier to create a plugin from scratch—something I have full control of, can use right away, and can learn from in the process.
+Therefore, it was easier to create a plugin from scratch - something I have full control of, can use right away, and can learn from in the process.
 
 ### Is the project open to contributions?
 
 Yes! I very much welcome the community's input, and I would be pleased to see your ideas on how to expand or improve this plugin. Feel free to open an issue. :)
+
+### Is flat config supported?
+
+Yes.
+
+## Further reading
+
+### Eslint Config Inspector
+
+You can check out your ESLint config by using the official tool - [ESLint Config Inspector](https://github.com/eslint/config-inspector):
+
+```
+pnpm dlx @eslint/config-inspector@latest
+```
 
 ## Inspirations
 
