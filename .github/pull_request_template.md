@@ -27,7 +27,6 @@ Please also list any relevant details for your test configuration
 **Test Configuration**:
 
 - OS + version: e.g. Windows 10
-- PNPM version: ...
 - Node version: ...
 
 ## Checklist:
