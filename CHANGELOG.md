@@ -1,5 +1,11 @@
 # eslint-plugin-quibble
 
+## 0.1.2
+
+### Patch Changes
+
+- 0299ae1: Adjust changeset settings, fix grammatical errors in the readme, add FAQ question
+
 ## 0.1.1
 
 ### Patch Changes
