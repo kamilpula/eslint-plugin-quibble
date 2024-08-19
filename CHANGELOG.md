@@ -1,5 +1,11 @@
 # eslint-plugin-quibble
 
+## 0.1.4
+
+### Patch Changes
+
+- 74418bc: Update links leading to the repo
+
 ## 0.1.3
 
 ### Patch Changes
