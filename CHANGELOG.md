@@ -1,5 +1,11 @@
 # eslint-plugin-quibble
 
+## 0.1.3
+
+### Patch Changes
+
+- c89f871: Add or correct package.json fields
+
 ## 0.1.2
 
 ### Patch Changes
