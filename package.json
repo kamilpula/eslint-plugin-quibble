@@ -3,8 +3,8 @@
   "type": "module",
   "version": "0.1.2",
   "packageManager": "pnpm@9.7.0",
-  "description": "ESLint plugin with stylistic code formatting rules that are often nitpicked in code review by developers.",
-  "author": "sorennx",
+  "description": "ESLint plugin with stylistic code formatting rules that are often nitpicked in code review by quibbly developers.",
+  "author": "Kamil Pula <kamil.pula.dev@gmail.com> (https://www.kamilpula.com/)",
   "license": "MIT",
   "homepage": "https://github.com/sorennx/eslint-plugin-quibble",
   "repository": {
@@ -12,8 +12,20 @@
     "url": "https://github.com/sorennx/eslint-plugin-quibble"
   },
   "bugs": "https://github.com/sorennx/eslint-plugin-quibble/issues",
-  "keywords": [],
-  "main": "dist/index.js",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "code-formatting",
+    "rules"
+  ],
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "test": "mocha \"tests/lib/**/*.js\"",
     "release": "pnpm run test && changeset publish"
