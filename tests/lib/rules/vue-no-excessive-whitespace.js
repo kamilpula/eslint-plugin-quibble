@@ -19,88 +19,88 @@ ruleTester.run('vue-no-excessive-whitespace', rule, {
     createVueTestCase({
       code: '<template><div class="foo  bar baz" /></template>',
       output: '<template><div class="foo bar baz" /></template>',
-      errors: createErrors('excessive-whitespace-in-static-class'),
+      errors: createErrors('excessive-whitespace-in-class-attribute'),
     }),
     createVueTestCase({
       code: '<template><div class="foo  " /></template>',
       output: '<template><div class="foo" /></template>',
-      errors: createErrors('excessive-whitespace-in-static-class'),
+      errors: createErrors('excessive-whitespace-in-class-attribute'),
     }),
     createVueTestCase({
       code: '<template><div class=" foo" /></template>',
       output: '<template><div class="foo" /></template>',
-      errors: createErrors('excessive-whitespace-in-static-class'),
+      errors: createErrors('excessive-whitespace-in-class-attribute'),
     }),
     createVueTestCase({
       code: '<template><div class=" foo " /></template>',
       output: '<template><div class="foo" /></template>',
-      errors: createErrors('excessive-whitespace-in-static-class'),
+      errors: createErrors('excessive-whitespace-in-class-attribute'),
     }),
     createVueTestCase({
       code: '<template><div class=" foo bar    baz       " /></template>',
       output: '<template><div class="foo bar baz" /></template>',
-      errors: createErrors('excessive-whitespace-in-static-class'),
+      errors: createErrors('excessive-whitespace-in-class-attribute'),
     }),
 
     // Excessive whitespace in class object expression
     createVueTestCase({
       code: '<template><div :class="{ \'foo  bar\': true }" /></template>',
       output: '<template><div :class="{ \'foo bar\': true }" /></template>',
-      errors: createErrors('excessive-whitespace-in-class-object-expression'),
+      errors: createErrors('excessive-whitespace-in-class-attribute'),
     }),
     createVueTestCase({
       code: '<template><div :class="{ \'foo  \': true }" /></template>',
       output: '<template><div :class="{ \'foo\': true }" /></template>',
-      errors: createErrors('excessive-whitespace-in-class-object-expression'),
+      errors: createErrors('excessive-whitespace-in-class-attribute'),
     }),
     createVueTestCase({
       code: '<template><div :class="{ \'   foo  \': true }" /></template>',
       output: '<template><div :class="{ \'foo\': true }" /></template>',
-      errors: createErrors('excessive-whitespace-in-class-object-expression'),
+      errors: createErrors('excessive-whitespace-in-class-attribute'),
     }),
     createVueTestCase({
       code: '<template><div :class="{ \'   foo  bar   baz\': true }" /></template>',
       output: '<template><div :class="{ \'foo bar baz\': true }" /></template>',
-      errors: createErrors('excessive-whitespace-in-class-object-expression'),
+      errors: createErrors('excessive-whitespace-in-class-attribute'),
     }),
     createVueTestCase({
       code: '<template><div :class="{ \'   foo  bar   baz\': condition, \'lam  bam\': condition2 }" /></template>',
       output: '<template><div :class="{ \'foo bar baz\': condition, \'lam bam\': condition2 }" /></template>',
-      errors: createErrors('excessive-whitespace-in-class-object-expression', 2),
+      errors: createErrors('excessive-whitespace-in-class-attribute', 2),
     }),
 
     // Excessive whitespace in class array expression
     createVueTestCase({
       code: '<template><div :class="[condition ? \'foo \' : \'   baz \']" /></template>',
       output: '<template><div :class="[condition ? \'foo\' : \'baz\']" /></template>',
-      errors: createErrors('excessive-whitespace-in-class-array-expression', 2),
+      errors: createErrors('excessive-whitespace-in-class-attribute', 2),
     }),
     createVueTestCase({
       code: '<template><div :class="[condition ? \'foo  bar\' : \'baz lee\']" /></template>',
       output: '<template><div :class="[condition ? \'foo bar\' : \'baz lee\']" /></template>',
-      errors: createErrors('excessive-whitespace-in-class-array-expression'),
+      errors: createErrors('excessive-whitespace-in-class-attribute'),
     }),
     createVueTestCase({
       code: '<template><div :class="[condition ? \'foo  bar\' : \'baz  lee\']" /></template>',
       output: '<template><div :class="[condition ? \'foo bar\' : \'baz lee\']" /></template>',
-      errors: createErrors('excessive-whitespace-in-class-array-expression', 2),
+      errors: createErrors('excessive-whitespace-in-class-attribute', 2),
     }),
 
     // Excessive whitespace in class object expression in array expression
     createVueTestCase({
       code: '<template><div :class="[{ [\'bar  \']: condition }]" /></template>',
       output: '<template><div :class="[{ [\'bar\']: condition }]" /></template>',
-      errors: createErrors('excessive-whitespace-in-class-object-expression'),
+      errors: createErrors('excessive-whitespace-in-class-attribute'),
     }),
     createVueTestCase({
       code: '<template><div :class="[{ [\'    bar  \']: condition }]" /></template>',
       output: '<template><div :class="[{ [\'bar\']: condition }]" /></template>',
-      errors: createErrors('excessive-whitespace-in-class-object-expression'),
+      errors: createErrors('excessive-whitespace-in-class-attribute'),
     }),
     createVueTestCase({
       code: '<template><div :class="[{ [\'bar  baz\']: condition }]" /></template>',
       output: '<template><div :class="[{ [\'bar baz\']: condition }]" /></template>',
-      errors: createErrors('excessive-whitespace-in-class-object-expression'),
+      errors: createErrors('excessive-whitespace-in-class-attribute'),
     }),
   ],
 })
