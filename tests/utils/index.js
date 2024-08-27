@@ -20,6 +20,6 @@ export function createErrors(messageId, count = 1) {
   return errors
 }
 
-export function createVueTestCase({ code, output = '', errors = [] }) {
-  return { code, output, errors, languageOptions: { parser: vueParser }, filename: 'test.vue' }
+export function createVueTestCase({ code, output = '', errors = [], options = [] }) {
+  return { code, output, errors, languageOptions: { parser: vueParser }, filename: 'test.vue', options }
 }
