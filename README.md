@@ -13,7 +13,8 @@ By using [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.v
 
 ## Latest changes
 
-- 8a10e79: Add vue-no-excessive-whitespace rule
+- 6c505cd: vue-no-excessive-whitespace - add support for callees, class regex, `<script>` tag handling
+- 6c505cd: Refactor utils into seperate files
 
 Check out the full changelog [here](CHANGELOG.md).
 
@@ -59,9 +60,7 @@ Adding `vue-eslint-parser` is optional - some popular configs such as [`antfu/es
 
 In the future, this plugin will be extended by the rules the community or myself find worth of adding.
 
-As of now, I'm primarily focused on extending the `vue-no-excessive-whitespace` rule by `callees` and `customRegex` configs so that it also works when consuming commonly used libraries, such as [cva](https://cva.style/docs), [clsx](https://github.com/lukeed/clsx).
-
-After that I'll move my attention to making this rule more framework agnostic, i.e. renaming it to `no-excessive-whitespace` so that it not only works with Vue, but with `{j,t}sx`, Svelte and so on.
+As of now I'm focused on making this rule more framework agnostic, i.e. renaming it to `no-excessive-whitespace` so that it not only works with Vue, but with `{j,t}sx`, Svelte and so on.
 
 ## FAQ
 
@@ -117,4 +116,4 @@ pnpm dlx @eslint/config-inspector@latest
 
 ## Inspirations
 
-I was heavily inspired by [eslint-plugin-tailwindcss](https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master) and [eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue) as the source code (structure, naming conventions etc.) for those plugins was essentially my entry point to creating `eslint-plugin-quibble`.
+I was heavily inspired by [eslint-plugin-tailwindcss](https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master) and [eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue) as the source code (structure, methods of crawling into nodes, naming conventions etc.) for those plugins was essentially my entry point and the base to creating `eslint-plugin-quibble`.
