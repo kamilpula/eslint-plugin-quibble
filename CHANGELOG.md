@@ -1,5 +1,11 @@
 # eslint-plugin-quibble
 
+## 0.2.1
+
+### Patch Changes
+
+- f384156: Update main readme, add missing jsdocs
+
 ## 0.2.0
 
 ### Minor Changes
