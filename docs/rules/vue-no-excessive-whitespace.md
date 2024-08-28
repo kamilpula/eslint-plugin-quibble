@@ -195,7 +195,7 @@ Regular expression to match the class attribute. By default, the rule is looking
 'classRegex': '^class(Name)?$'
 ```
 
-## Limitations
+## :warning: Limitations
 
 This rule currently supports following languages/frameworks:
 
