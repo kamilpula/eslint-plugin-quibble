@@ -1,5 +1,12 @@
 # eslint-plugin-quibble
 
+## 0.2.0
+
+### Minor Changes
+
+- 6c505cd: `vue-no-excessive-whitespace` - add support for callees, class regex, <script> tag handling
+- 6c505cd: Refactor utils into seperate files
+
 ## 0.1.4
 
 ### Patch Changes
