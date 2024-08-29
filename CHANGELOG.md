@@ -1,5 +1,11 @@
 # eslint-plugin-quibble
 
+## 1.0.1
+
+### Patch Changes
+
+- 05608a2: Fix rule detection for empty strings
+
 ## 1.0.0
 
 ### Major Changes
