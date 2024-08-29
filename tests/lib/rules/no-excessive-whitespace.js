@@ -1,8 +1,8 @@
 'use strict'
-import rule from '../../../lib/rules/vue-no-excessive-whitespace.js'
+import rule from '../../../lib/rules/no-excessive-whitespace.js'
 import { createErrors, createTestCase, createVueTestCase, ruleTester } from '../../utils/index.js'
 
-ruleTester.run('vue-no-excessive-whitespace', rule, {
+ruleTester.run('no-excessive-whitespace', rule, {
   valid: [
     createVueTestCase({
       code: `<script setup>clsx('foo bar baz')</script>`,

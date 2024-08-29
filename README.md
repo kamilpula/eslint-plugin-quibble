@@ -6,14 +6,14 @@
 
 Learn more about each supported rules by reading their documentation:
 
-- `vue-no-excessive-whitespace`: removes unnecessary whitespace characters, including leading and trailing spaces, as well as multiple spaces between class names.
+- `no-excessive-whitespace`: removes unnecessary whitespace characters, including leading and trailing spaces, as well as multiple spaces between class names.
 
 By using [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) extension for Visual Studio Code, you will get the following messages:
 ![errors](.github/output.png)
 
 ## Latest changes
 
-- 6c505cd: vue-no-excessive-whitespace - add support for callees, class regex, `<script>` tag handling
+- 6c505cd: no-excessive-whitespace - add support for callees, class regex, `<script>` tag handling
 - 6c505cd: Refactor utils into seperate files
 
 Check out the full changelog [here](CHANGELOG.md).
@@ -42,7 +42,7 @@ export default [
     },
 
     rules: {
-      'quibble/vue-no-excessive-whitespace': 'error'
+      'quibble/no-excessive-whitespace': 'error'
     },
   },
   {

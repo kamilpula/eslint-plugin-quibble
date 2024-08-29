@@ -1,4 +1,4 @@
-# quibble/vue-no-excessive-whitespace
+# quibble/no-excessive-whitespace
 
 ## :book: Rule details
 
@@ -168,7 +168,7 @@ options: [{ classRegex: '^quibble$' }],
 
 ```js
 ...
-"quibble/vue-no-excessive-whitespace": [<enabled>, {
+"quibble/no-excessive-whitespace": [<enabled>, {
   'classRegex': <string>,
   'callees': Array<string>
 }]
