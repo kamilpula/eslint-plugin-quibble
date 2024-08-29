@@ -1,5 +1,12 @@
 # eslint-plugin-quibble
 
+## 1.0.0
+
+### Major Changes
+
+- 871c6b1: Rename `vue-no-excessive-whitespace` rule to `no-excessive-whitespace`
+  Add `{j,t}sx` support for the `no-excessive-whitespace` rule
+
 ## 0.2.1
 
 ### Patch Changes
