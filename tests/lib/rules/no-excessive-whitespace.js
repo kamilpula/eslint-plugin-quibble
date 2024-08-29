@@ -17,6 +17,38 @@ ruleTester.run('no-excessive-whitespace', rule, {
       code: '<template><div :class="[\'foo\', \'bar\']" /></template>',
     }),
     createTestCase({
+      code: `cva('', {})`,
+    }),
+    createTestCase({
+      code: `
+      const badgeVariants = cva(
+        'inline-flex items-center text-xs',
+        {
+          variants: {
+            size: {
+              sm: 'min-h-1.5 min-w-1.5 self-center',
+              lg: 'px-2',
+            },
+            variant: {
+              default: 'text-foreground bg-gray-500',
+              primary: 'bg-primary text-primary-foreground',
+              secondary: 'bg-secondary text-primary-foreground',
+              success: 'bg-success text-success-foreground',
+              warning: 'bg-warning text-warning-foreground',
+              destructive: 'bg-destructive text-destructive-foreground',
+            },
+            singleDigit: {
+              true: 'px-1.5',
+            },
+          },
+          defaultVariants: {
+            variant: 'default',
+            size: 'lg',
+          },
+        },
+      )`,
+    }),
+    createTestCase({
       code: `
       export default function HiMyNameIs({
           name = 'Hi, my name is -',
@@ -117,6 +149,121 @@ ruleTester.run('no-excessive-whitespace', rule, {
       filename: 'test.jsx',
       options: [{ classRegex: '^quibble$' }],
       errors: createErrors('excessive-whitespace-in-class-attribute'),
+    }),
+    createTestCase({
+      code: `
+      const badgeVariants = cva('inline-flex items-center text-xs',
+        {
+          variants: {
+            size: {
+              sm: 'min-h-1.5 min-w-1.5 self-center ',
+              lg: 'px-2',
+            },
+            variant: {
+              default: ' text-foreground bg-gray-500',
+              primary: ' bg-primary text-primary-foreground',
+              secondary: ' bg-secondary  text-primary-foreground',
+              success: 'bg-success  text-success-foreground',
+              warning: 'bg-warning text-warning-foreground',
+              destructive: 'bg-destructive  text-destructive-foreground',
+            },
+            singleDigit: {
+              true: 'px-1.5',
+            },
+          },
+          defaultVariants: {
+            variant: 'default',
+            size: 'lg',
+          },
+        },
+      )`,
+      output: `
+      const badgeVariants = cva('inline-flex items-center text-xs',
+        {
+          variants: {
+            size: {
+              sm: 'min-h-1.5 min-w-1.5 self-center',
+              lg: 'px-2',
+            },
+            variant: {
+              default: 'text-foreground bg-gray-500',
+              primary: 'bg-primary text-primary-foreground',
+              secondary: 'bg-secondary text-primary-foreground',
+              success: 'bg-success text-success-foreground',
+              warning: 'bg-warning text-warning-foreground',
+              destructive: 'bg-destructive text-destructive-foreground',
+            },
+            singleDigit: {
+              true: 'px-1.5',
+            },
+          },
+          defaultVariants: {
+            variant: 'default',
+            size: 'lg',
+          },
+        },
+      )`,
+      filename: 'test.jsx',
+      errors: createErrors('excessive-whitespace-in-class-attribute', 6),
+    }),
+    createTestCase({
+      code: `
+      const badgeVariants = cva('inline-flex items-center text-xs ',
+        {
+          variants: {
+            size: {
+              sm: 'min-h-1.5 min-w-1.5 self-center ',
+              lg: 'px-2',
+            },
+            variant: {
+              default: ' text-foreground bg-gray-500',
+              primary: ' bg-primary text-primary-foreground',
+              secondary: ' bg-secondary  text-primary-foreground',
+              success: 'bg-success  text-success-foreground',
+              warning: 'bg-warning text-warning-foreground',
+              destructive: 'bg-destructive  text-destructive-foreground',
+            },
+            singleDigit: {
+              true: 'px-1.5',
+            },
+          },
+          defaultVariants: {
+            variant: 'default',
+            size: 'lg',
+          },
+        },
+      )`,
+      output: `
+      const badgeVariants = cva('inline-flex items-center text-xs',
+        {
+          variants: {
+            size: {
+              sm: 'min-h-1.5 min-w-1.5 self-center',
+              lg: 'px-2',
+            },
+            variant: {
+              default: 'text-foreground bg-gray-500',
+              primary: 'bg-primary text-primary-foreground',
+              secondary: 'bg-secondary text-primary-foreground',
+              success: 'bg-success text-success-foreground',
+              warning: 'bg-warning text-warning-foreground',
+              destructive: 'bg-destructive text-destructive-foreground',
+            },
+            singleDigit: {
+              true: 'px-1.5',
+            },
+          },
+          defaultVariants: {
+            variant: 'default',
+            size: 'lg',
+          },
+        },
+      )`,
+      filename: 'test.jsx',
+      errors: [
+        ...createErrors('excessive-whitespace-in-class-callee', 1),
+        ...createErrors('excessive-whitespace-in-class-attribute', 6),
+      ],
     }),
 
     /* -------------------------------
