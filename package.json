@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-quibble",
   "type": "module",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "packageManager": "pnpm@9.7.0",
   "description": "ESLint plugin with stylistic code formatting rules that are often nitpicked in code review by quibbly developers.",
   "author": "Kamil Pula <kamil.pula.dev@gmail.com> (https://www.kamilpula.com/)",
