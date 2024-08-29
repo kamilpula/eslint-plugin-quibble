@@ -2,9 +2,25 @@
 
 ## :book: Rule details
 
-This rule removes unnecessary whitespace characters, including leading, trailing, and multiple consecutive spaces in class names. It applies to callees inside `<script>` and `<template>` tags and within `class` attributes matching a class regex inside Vue templates.
+This rule removes unnecessary whitespace characters, including leading, trailing, and multiple consecutive spaces in class names. It applies to callees inside `<script>` and `<template>` tags and within `class` attributes matching a class regex.
 
 ## :x: Examples of **incorrect** code for this rule:
+
+### JSX/TSX files
+```jsx
+export default function Quibble({
+  name = 'Hi, my name is -',
+}) {
+  const foo = clsx('fizz  buzz')
+  return (
+    <h1 className="foo bar baz ">
+      {name}
+      Quibble
+    </h1>
+  )
+}
+```
+
 
 ### Class definition inside a callee in the `<script>` tag
 
@@ -86,6 +102,22 @@ options: [{ classRegex: '^quibble$' }],
 ```
 
 ## :white_check_mark: Examples of **correct** code for this rule:
+
+### JSX/TSX files
+```jsx
+export default function Quibble({
+  name = 'Hi, my name is -',
+}) {
+  const foo = clsx('fizz buzz')
+
+  return (
+    <h1 className="foo bar baz">
+      {name}
+      Quibble
+    </h1>
+  )
+}
+```
 
 ### Class definition inside a callee in the `<script>` tag
 
@@ -200,9 +232,9 @@ Regular expression to match the class attribute. By default, the rule is looking
 This rule currently supports following languages/frameworks:
 
 - Vue
-
-The support for `{j,t}sx` is on the way.
+- JSX
+- TSX
 
 ## :rocket: Version
 
-This rule was first introduced in `eslint-plugin-quibble` in [`v0.1.3`](https://github.com/kamilpula/eslint-plugin-quibble/releases/tag/v0.1.3).
+This rule was first introduced in [`v1.0.0`](https://github.com/kamilpula/eslint-plugin-quibble/releases/tag/v1.0.0), previously known as `vue-no-excessive-whitespace` that was released in [`v0.1.3`](https://github.com/kamilpula/eslint-plugin-quibble/releases/tag/v0.1.3).
