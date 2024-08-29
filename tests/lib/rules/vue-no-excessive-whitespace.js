@@ -1,6 +1,6 @@
 'use strict'
 import rule from '../../../lib/rules/vue-no-excessive-whitespace.js'
-import { createErrors, createVueTestCase, ruleTester } from '../../utils/index.js'
+import { createErrors, createTestCase, createVueTestCase, ruleTester } from '../../utils/index.js'
 
 ruleTester.run('vue-no-excessive-whitespace', rule, {
   valid: [
@@ -16,9 +16,91 @@ ruleTester.run('vue-no-excessive-whitespace', rule, {
     createVueTestCase({
       code: '<template><div :class="[\'foo\', \'bar\']" /></template>',
     }),
-
+    createTestCase({
+      code: `
+      export default function HiMyNameIs({
+          name = 'Hi, my name is -',
+        }) {
+          return (
+            <h1 className="thats an awfully hot coffee pot">
+              {name}
+              Slim Shady
+            </h1>
+          )
+        }`,
+    }),
   ],
   invalid: [
+    /* -------------------------------
+    * JavaScript
+    * ------------------------------- */
+    createTestCase({
+      code: `clsx('foo  bar baz')`,
+      output: `clsx('foo bar baz')`,
+      errors: createErrors('excessive-whitespace-in-class-callee'),
+    }),
+    createTestCase({
+      code: `customCallee('foo  bar baz')`,
+      output: `customCallee('foo bar baz')`,
+      options: [{ callees: ['customCallee'] }],
+      errors: createErrors('excessive-whitespace-in-class-callee'),
+    }),
+    createTestCase({
+      code: `
+      export default function HiMyNameIs({
+          name = 'Hi, my name is -',
+        }) {
+          return (
+            <h1 className="thats an awfully hot coffee pot ">
+              {name}
+              Slim Shady
+            </h1>
+          )
+        }`,
+      output: `
+      export default function HiMyNameIs({
+          name = 'Hi, my name is -',
+        }) {
+          return (
+            <h1 className="thats an awfully hot coffee pot">
+              {name}
+              Slim Shady
+            </h1>
+          )
+        }`,
+      errors: createErrors('excessive-whitespace-in-class-attribute'),
+    }),
+    createTestCase({
+      code: `
+      export default function HiMyNameIs({
+          name = 'Hi, my name is -',
+        }) {
+          return (
+            <h1 quibble="thats an awfully hot coffee pot ">
+              {name}
+              Slim Shady
+            </h1>
+          )
+        }`,
+      output: `
+      export default function HiMyNameIs({
+          name = 'Hi, my name is -',
+        }) {
+          return (
+            <h1 quibble="thats an awfully hot coffee pot">
+              {name}
+              Slim Shady
+            </h1>
+          )
+        }`,
+      options: [{ classRegex: '^quibble$' }],
+      errors: createErrors('excessive-whitespace-in-class-attribute'),
+    }),
+
+    /* -------------------------------
+    * Vue
+    * ------------------------------- */
+
     // Excessive whitespace in callee
     createVueTestCase({
       code: `<script setup>clsx('foo  bar baz')</script>`,
