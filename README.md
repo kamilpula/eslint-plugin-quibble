@@ -6,15 +6,14 @@
 
 Learn more about each supported rules by reading their documentation:
 
-- `vue-no-excessive-whitespace`: removes unnecessary whitespace characters, including leading and trailing spaces, as well as multiple spaces between class names.
+- `no-excessive-whitespace`: removes unnecessary whitespace characters, including leading and trailing spaces, as well as multiple spaces between class names.
 
 By using [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) extension for Visual Studio Code, you will get the following messages:
 ![errors](.github/output.png)
 
 ## Latest changes
 
-- 6c505cd: vue-no-excessive-whitespace - add support for callees, class regex, `<script>` tag handling
-- 6c505cd: Refactor utils into seperate files
+The `vue-no-excessive-whitespace` was renamed to `no-excessive-whitespace` and `{j,t}sx` support was added.
 
 Check out the full changelog [here](CHANGELOG.md).
 
@@ -42,7 +41,7 @@ export default [
     },
 
     rules: {
-      'quibble/vue-no-excessive-whitespace': 'error'
+      'quibble/no-excessive-whitespace': 'error'
     },
   },
   {
@@ -58,9 +57,7 @@ Adding `vue-eslint-parser` is optional - some popular configs such as [`antfu/es
 
 ## Future
 
-In the future, this plugin will be extended by the rules the community or myself find worth of adding.
-
-As of now I'm focused on making this rule more framework agnostic, i.e. renaming it to `no-excessive-whitespace` so that it not only works with Vue, but with `{j,t}sx`, Svelte and so on.
+In the future, this plugin will be expanded by the rules the community or myself find worth of adding.
 
 ## FAQ
 
@@ -88,9 +85,9 @@ Side note: The other option, to avoid making my fellow developers angry with me,
 
 There are a few reasons why. The primary one is that I wanted to finally build a tool on my own. I've spent countless hours configuring ESLint to work the way I want, and my curiosity about how it works internally eventually won.
 
-The second reason why, it takes time to get your PR reviewed, accepted and published. Where would the `no-excessive-whitespace` rule even fit? [`eslint-plugin-vue`](https://github.com/vuejs/eslint-plugin-vue), [`eslint-stylistic`](https://github.com/eslint-stylistic/eslint-stylistic) or maybe [`eslint-plugin-tailwindcss`](https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master)? There's an issue opened on the last one since Jul 21, 2023.
+The second reason why, it takes time to get your PR reviewed, accepted and published. Where would the `no-excessive-whitespace` rule even fit? [`eslint-plugin-perfectionist`](https://github.com/azat-io/eslint-plugin-perfectionist), [`eslint-stylistic`](https://github.com/eslint-stylistic/eslint-stylistic) or maybe [`eslint-plugin-tailwindcss`](https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master)? There's an issue opened on the last one since Jul 21, 2023.
 
-Therefore, it was easier to create a plugin from scratch - something I have full control of, can use right away, and can learn from in the process.
+Therefore, it was easier to create a plugin from scratch - something I have a full control of, can use right away, and can learn from in the process.
 
 ### Is the project open to contributions?
 

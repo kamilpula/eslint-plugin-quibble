@@ -15,6 +15,6 @@ export default antfu({
   },
   rules: {
     'jsonc/sort-keys': 'error',
-    'quibble/vue-no-excessive-whitespace': 'error',
+    'quibble/no-excessive-whitespace': 'error',
   },
 })
