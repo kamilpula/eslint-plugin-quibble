@@ -1,12 +1,16 @@
 export default function HiMyNameIs({
   name = 'Hi, my name is -',
 }) {
-  return (
+  function clsx(str) {
+    return str
+  }
 
-    <h1 className="thats an awfully hot coffee pot">
+  const foo = clsx('foo bar baz')
+
+  return (
+    <h1 className={clsx('foo bar baz')}>
       {name}
       Slim Shady
     </h1>
-
   )
 }

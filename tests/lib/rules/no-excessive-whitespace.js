@@ -32,7 +32,7 @@ ruleTester.run('no-excessive-whitespace', rule, {
   ],
   invalid: [
     /* -------------------------------
-    * JavaScript
+    * JSX
     * ------------------------------- */
     createTestCase({
       code: `clsx('foo  bar baz')`,
@@ -68,7 +68,28 @@ ruleTester.run('no-excessive-whitespace', rule, {
             </h1>
           )
         }`,
+      filename: 'test.tsx',
       errors: createErrors('excessive-whitespace-in-class-attribute'),
+    }),
+    createTestCase({
+      code: `
+      export default function foo() {
+        function clsx(str) {
+          return str
+        }
+
+        return clsx('foo bar baz ')
+      }`,
+      output: `
+      export default function foo() {
+        function clsx(str) {
+          return str
+        }
+
+        return clsx('foo bar baz')
+      }`,
+      filename: 'test.js',
+      errors: createErrors('excessive-whitespace-in-class-callee'),
     }),
     createTestCase({
       code: `
@@ -93,6 +114,7 @@ ruleTester.run('no-excessive-whitespace', rule, {
             </h1>
           )
         }`,
+      filename: 'test.jsx',
       options: [{ classRegex: '^quibble$' }],
       errors: createErrors('excessive-whitespace-in-class-attribute'),
     }),

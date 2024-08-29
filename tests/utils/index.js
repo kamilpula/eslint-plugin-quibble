@@ -20,8 +20,8 @@ export function createErrors(messageId, count = 1) {
   return errors
 }
 
-export function createTestCase({ code, output = '', errors = [], options = [], languageOptions = {} }) {
-  return { code, output, errors, options, languageOptions }
+export function createTestCase({ code, output = '', errors = [], options = [], languageOptions = {}, filename = 'test' }) {
+  return { code, output, errors, options, languageOptions, filename }
 }
 
 export function createVueTestCase({ code, output = '', errors = [], options = [] }) {
