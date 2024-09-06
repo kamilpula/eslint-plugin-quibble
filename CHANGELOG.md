@@ -1,5 +1,11 @@
 # eslint-plugin-quibble
 
+## 1.0.2
+
+### Patch Changes
+
+- 9ff317c: Add check for non-string original class names values
+
 ## 1.0.1
 
 ### Patch Changes
