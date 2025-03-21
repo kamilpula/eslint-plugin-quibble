@@ -16,5 +16,6 @@ export default antfu({
   rules: {
     'jsonc/sort-keys': 'error',
     'quibble/no-excessive-whitespace': 'error',
+    'quibble/add-comment-before-import': 'error',
   },
 })
